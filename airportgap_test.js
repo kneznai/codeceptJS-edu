@@ -1,5 +1,5 @@
-var PersonBuilder = require('./framework/builder/newUser');
-var expect = require('expect');
+let PersonBuilder = require('./framework/builder/newUser');
+
 let user;
 let token;
 
@@ -25,6 +25,7 @@ Scenario('generate token', async ({ I, mainPage, tokenPage }) => {
     I.assertEqual(user.email, await tokenPage.getEmail());
 
     token = await tokenPage.getToken();
+    I.assertOk(token.length > 0); // verify that token is not empty
 });
 
 Scenario('sign in', async ({ I, mainPage, tokenPage }) => {

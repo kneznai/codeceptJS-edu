@@ -1,8 +1,7 @@
-var faker = require('faker');
+let faker = require('faker');
 
 class PersonBuilder {
     constructor() {
-
     }
 
   addUserName() {
