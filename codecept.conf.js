@@ -9,21 +9,21 @@ exports.config = {
   output: './output',
   helpers: {
     Playwright: {
-      url: 'https://try.vikunja.io',
+      url: 'https://airportgap.dev-tester.com',
       show: true,
       browser: 'chromium',
       restart: true,
     },
-    REST: {
-      endpoint: "https://my-json-server.typicode.com/typicode/demo",
-      defaultHeaders: {
-          'Content-Type': 'application/json',
-      },
+    "AssertWrapper" : {
+      "require": "codeceptjs-assert"
     },
   },
   include: {
     I: './steps_file.js',
-    mainPage: './pages/main.js',
+    mainPage: './pages/mainPage.js',
+    tokenPage: './pages/tokenPage.js',
+    loginPage: './pages/loginPage.js',
+    changePasswordPage: './pages/changePasswordPage.js',
     passwordResetPage: './pages/passwordReset.js',
   },
   bootstrap: null,
